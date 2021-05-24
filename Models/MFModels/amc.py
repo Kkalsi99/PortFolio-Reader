@@ -1,8 +1,12 @@
+from typing import List
+
 from Models.MFModels.folio import Folio
 
 
 class Amc:
-    name: str
-    folios = list[Folio]
+
+    def __init__(self, name):
+        self.name: str = name
+        self.folios: List[Folio] = list()
 
     pass

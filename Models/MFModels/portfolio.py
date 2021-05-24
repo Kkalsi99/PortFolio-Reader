@@ -1,6 +1,8 @@
 from Models.MFModels.amc import Amc
+from typing import List
 
 
 class Portfolio:
-    amcs: list[Amc]  # list of Amc's class object
+    def __init__(self):
+        self.amcs: List[Amc] = list()  # list of Amc's class object
     pass
