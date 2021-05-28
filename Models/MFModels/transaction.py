@@ -10,8 +10,8 @@ class Type(enum.Enum):
 
 class Transaction:
 
-    def __init__(self,type,unitsAlloted,price,dateOfTransaction):
-        self.type : Type = type
+    def __init__(self,dateOfTransaction,type,price,unitsAlloted):
+        self.type: str = type
         self.unitsAllotted: float = unitsAlloted
         self.price: float = price
         self.dateOfTransaction: date = dateOfTransaction

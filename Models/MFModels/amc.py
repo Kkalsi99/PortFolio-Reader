@@ -5,7 +5,7 @@ from Models.MFModels.folio import Folio
 
 class Amc:
 
-    def __init__(self, name):
+    def __init__(self, name=None):
         self.name: str = name
         self.folios: List[Folio] = list()
 
