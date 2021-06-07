@@ -6,11 +6,15 @@ from Models.MFModels.fund import Fund
 from Models.MFModels.transaction import Transaction, Type as transactionType
 from CAMSStatementParser.parser import Parser
 from datetime import date
+from database.database import Database
+from databaseWebScraper.navData import sendData
 
-parser = Parser("/home/kghost/test.pdf", "Qwerty@99")
-parser.getUserInfo()
-user = parser.getAmcList()
-
+# parser = Parser("/home/kghost/test.pdf", "Qwerty@99")
+# parser.getUserInfo()
+# user = parser.getAmcList()
+db = Database("test")
+# db.create_table("","")
+sendData()
 
 
 

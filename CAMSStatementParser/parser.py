@@ -51,24 +51,24 @@ class Parser:
 
         # Email
         email = re.search("\w+@+\w+\.+\w+", userInfoStr[0])
-        print(email.group(0))
+        # print(email.group(0))
 
         # Name
         name = re.search("[a-zA-Z\s]+", userInfoStr[1])
-        print(name.group(0))
+        # print(name.group(0))
 
         # address
         address = ""
         for i in range(2, Len - 1):
             address = "".join([address, userInfoStr[i], " "])
-        print(address)
+        # print(address)
 
         # phone
         if re.search("\+", userInfoStr[Len - 1]):
             phone = re.search("\+\d{12}", userInfoStr[Len - 1])
         else:
             phone = re.search("\d{10}", userInfoStr[Len - 1])
-        print(phone.group(0))
+        # print(phone.group(0))
 
         user = User(name.group(0), "", email.group(0), phone.group(0), address)
         self.user = user
