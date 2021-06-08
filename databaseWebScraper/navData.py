@@ -9,19 +9,17 @@ def sendData():
     data = r.text.split('\n')
 
     amc = ""
-    i = 0
 
     for row in data:
-        row = row.replace('\r','')
+        row = row.replace('\r', '')
         if row in amclist:
             amc = row
 
         elif amc:
-            print(amc)
             if row != "":
-                db.update_data(row+';'+amc)
-                db.commit()
-
+                # db.insert_data(row+';'+amc)
+                db.update_data(row + ';' + amc)
+    db.commit()
 
 
 pass

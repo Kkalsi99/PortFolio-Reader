@@ -36,7 +36,7 @@ class Database:
             sql = 'CREATE TABLE mutual_fund_NAV (scheme_code text, isin_div_payout text ,isin_div_reinvestment ' \
                   'text,scheme_name text,net_asset_value text,date text,amc_name text)'
             cur.execute(sql)
-            self.con.commit()
+
             pass
         else:
             print("please setup database connection")
@@ -64,8 +64,8 @@ class Database:
         if self.con:
             cur = self.con.cursor()
             if len(rowData) == 7:
-                sql = 'UPDATE mutual_fund_NAV set net_asset_value = ?,date=? where scheme_code = rowData[0]'
-                updateData = [rowData[-3], rowData[-2]]
+                sql = 'UPDATE mutual_fund_NAV set net_asset_value = ? , date=? where scheme_code = ?'
+                updateData = [rowData[-3], rowData[-2],rowData[0]]
                 cur.execute(sql, updateData)
 
 

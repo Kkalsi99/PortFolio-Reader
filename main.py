@@ -14,6 +14,7 @@ from databaseWebScraper.navData import sendData
 # user = parser.getAmcList()
 db = Database("test")
 # db.create_table("","")
+# db.commit()
 sendData()
 
 
